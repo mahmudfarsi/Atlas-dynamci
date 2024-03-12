@@ -1,0 +1,19 @@
+@import './base.css';
+
+:root{
+    --bg-main:#A7B3C7;
+    --blue-gray: #A7B3C7;
+    --white: #FFF;
+    --black: #000;
+    --border-color: rgba(255, 255, 255, 0.50);
+    --row-gap: 30px;
+}
+
+.wrapper{
+    padding-top: 20px;
+    width: 100%;
+    min-height: 100vh;
+    background: var(--bg-main);
+    display: flex;
+    justify-content: center;
+}
