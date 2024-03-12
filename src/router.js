@@ -16,6 +16,11 @@ export default createRouter({
             name:'country-id',
             path:'/country/:id',
             component:import('@/pages/CountryInfo.vue')
+        },
+        {
+            name:'404',
+            path: '/:pathMatch(.*)*',
+            component: import('@/pages/404.vue')
         }
     ]
 })
