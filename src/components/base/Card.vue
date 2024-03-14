@@ -32,11 +32,13 @@
     box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px 0px rgba(0, 0, 0, 0.05), 0px 10px 10px 0px rgba(0, 0, 0, 0.10);
 }
     .card--simple {
-        padding: 5px 10px;
+        width: 193px;
+        height: 55px;
+        padding: 0px 10px;
         display: flex;
-        gap: 5px;
+        gap: 10px;
         flex-flow: row nowrap;
-        border-radius: 5px;
+        border-radius: 50px;
         
     }
 

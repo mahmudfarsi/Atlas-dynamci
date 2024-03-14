@@ -1,21 +1,20 @@
 <template>
   <div>
-    <Header />
-    <button @click="goBack">backkkkkk!</button>
-    <RouterLink :to="{
-      name:'home'
-    }">goooooooo by router</RouterLink>
     <h1>
       Atlas: Everything you need to know about {{ countryInfo.name?.common }}
     </h1>
-    <Cardinfo :country="countryInfo" />
-    <main>
-      <p v-for="(item, index) in description" :key="index">
+    <Button :is-icon-only="false" tag="router-link" icon="left-flash" :to="{name:'home'}">Go back</Button>
+    <main class="main-info">
+      
+      <div>
+        <p v-for="(item, index) in description" :key="index">
         {{ item }}
       </p>
       <p>
         {{ borders }}
       </p>
+      </div>
+      <Cardinfo :country="countryInfo" />
     </main>
   </div>
 </template>
@@ -25,6 +24,7 @@ import Header from "@/components/mains/Header.vue";
 import { defineProps, computed, ref } from "vue";
 import Cardinfo from "@/components/mains/CardInfo.vue";
 import { useRoute ,useRouter} from "vue-router";
+import Button from '@/components/base/Button.vue'
 
 
 const route = useRoute();
@@ -70,3 +70,13 @@ const goBack = () => {
 }
 getCountry();
 </script>
+
+
+
+<style  scoped>
+  .main-info {
+    width: 100%;
+    height: auto;
+    display: flex;
+  }
+</style>

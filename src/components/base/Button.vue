@@ -1,7 +1,7 @@
 <template>
     <component :is="tag" :class="['btn',`btn--${isIconOnly ? 'simple' : 'noSimple'}`]">
-        <slot v-if="!isIconOnly"/>
         <Icon v-if="icon" :name="icon"/>
+        <slot v-if="!isIconOnly"/>
     </component>
 </template>
 
@@ -13,7 +13,7 @@
     defineProps({
         isIconOnly:bool().def(false),
         icon:string(),
-        tag:oneOf(['button','a','RouterLink','span']).def('button')
+        tag:oneOf(['button','a','router-link','span']).def('button')
     })
 </script>
 
