@@ -19,8 +19,6 @@
         :key="country.cca3"
       />
     </Row>
-    <button @click="add">click</button>
-    {{ count }}
   </main>
 </template>
 
