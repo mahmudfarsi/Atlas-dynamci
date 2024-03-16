@@ -67,9 +67,42 @@ const description = computed(() => {
   ];
 });
 const router = useRouter();
-const goBack = () => {
-  router.back(-1)
+// const goBack = () => {
+//   router.back(-1)
+// }
+
+
+const calcPopulation = (number) => {
+    const numberLength = number.toString().length
+
+    let title = ''
+    let count = number
+
+    if (numberLength > 3 && numberLength <= 5) {
+        title = 'thousand'
+        count = number / 1000
+    }
+    else if (numberLength > 5 && numberLength <= 9) {
+        title = 'million'
+        count = number / 1000000
+    } else if (numberLength > 9) {
+        title = 'billion'
+        count = number / 1000000000
+    }
+
+    let roundPow = 1
+    const [countMain, countRemain] = count.toString().split('.')
+    if (countMain === '0' || (countMain.length === 1 && countRemain?.length > 1)) {
+        roundPow = 10
+    }
+    count = Math.floor(count * roundPow) / roundPow
+
+    return `${count} ${title}`
+
 }
+
+
+
 getCountry();
 </script>
 
