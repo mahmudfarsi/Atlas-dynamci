@@ -201,6 +201,9 @@ const countryInfoLabel = computed(() => {
   width: 307px;
   padding: 15px;
   height: 784px;
+  min-height: 784px;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 .card-title {
   text-align: center;

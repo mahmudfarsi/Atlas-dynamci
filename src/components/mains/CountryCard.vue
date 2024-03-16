@@ -1,12 +1,12 @@
 <template>
-    <Card tag="li" :is-simple="false">
+    <Card tag="li" :is-simple="false" v-if="country">
         <template #header>
-            <Img :src="country.flags.png" :alt="country.name.common" height="150"/>
+            <Img :src="country?.flags?.png" :alt="country.name?.common" height="150"/>
         </template>
         <div class="body">
             <div class="box_title">
                 <h1 class="title">
-                    {{ country.name.common }}
+                    {{ country?.name?.common }}
                 </h1>
                 <label>
                     <Button :is-icon-only="true" :icon="isFav ? 'filled-heart' : 'empty-heart' " @click="toggleStore(props.country)"/>
@@ -18,7 +18,7 @@
             </div>
         </div>
         <template #footer>
-            <Button tag="RouterLink" :to="{name:'country-id',params:{id:country.cca3}}" :is-icon-only="false" icon="right-flesh" class="btn">
+            <Button tag="RouterLink"  :is-icon-only="false" icon="right-flesh" class="btn" :to="{name:'country-id',params:{id:country.cca3}}">
                 learn more
             </Button>
         </template>
